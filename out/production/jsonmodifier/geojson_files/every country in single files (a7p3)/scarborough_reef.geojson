@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Scarborough Reef", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 117.754, 15.154 ], [ 117.754, 15.154 ] ] ] } }
+]
+}

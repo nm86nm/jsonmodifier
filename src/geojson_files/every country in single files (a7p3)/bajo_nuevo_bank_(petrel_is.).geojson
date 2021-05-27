@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Bajo Nuevo Bank (Petrel Is.)", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -79.989, 15.795 ], [ -79.989, 15.795 ] ] ] } }
+]
+}

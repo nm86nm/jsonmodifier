@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Akrotiri Sovereign Base Area", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 32.841, 34.699 ], [ 32.914, 34.66 ], [ 32.99, 34.646 ], [ 32.991, 34.634 ], [ 32.941, 34.575 ], [ 32.761, 34.653 ], [ 32.823, 34.691 ], [ 32.841, 34.699 ] ] ] } }
+]
+}

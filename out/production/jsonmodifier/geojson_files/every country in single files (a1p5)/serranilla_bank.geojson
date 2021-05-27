@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Serranilla Bank", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -78.63707, 15.86209 ], [ -78.64041, 15.864 ], [ -78.63687, 15.8673 ], [ -78.63707, 15.86209 ] ] ] } }
+]
+}

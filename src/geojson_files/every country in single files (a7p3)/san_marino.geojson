@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "San Marino", "ISO_A3": "SMR" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 12.429, 43.892 ], [ 12.482, 43.983 ], [ 12.478, 43.923 ], [ 12.429, 43.892 ] ] ] } }
+]
+}

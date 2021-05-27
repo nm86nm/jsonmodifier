@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Singapore", "ISO_A3": "SGP" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 103.961, 1.391 ], [ 103.932, 1.311 ], [ 103.826, 1.264 ], [ 103.709, 1.305 ], [ 103.684, 1.41 ], [ 103.805, 1.449 ], [ 103.961, 1.391 ] ] ] } }
+]
+}

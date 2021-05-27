@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Jersey", "ISO_A3": "JEY" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -2.083, 49.26 ], [ -2.017, 49.207 ], [ -2.049, 49.178 ], [ -2.153, 49.2 ], [ -2.223, 49.185 ], [ -2.215, 49.26 ], [ -2.122, 49.258 ], [ -2.083, 49.26 ] ] ] } }
+]
+}

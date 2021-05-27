@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Monaco", "ISO_A3": "MCO" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 7.437, 43.743 ], [ 7.373, 43.746 ], [ 7.437, 43.743 ] ] ] } }
+]
+}
