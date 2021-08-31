@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Gibraltar", "ISO_A3": "GIB" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -5.358, 36.141 ], [ -5.358, 36.141 ] ] ] } }
-]
-}

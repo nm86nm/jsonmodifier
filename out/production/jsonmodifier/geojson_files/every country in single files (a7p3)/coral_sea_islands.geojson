@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Coral Sea Islands", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 154.391, -21.03 ], [ 154.391, -21.03 ] ] ] } }
-]
-}

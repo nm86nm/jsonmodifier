@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Norfolk Island", "ISO_A3": "NFK" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 167.984, -29.018 ], [ 167.966, -29.076 ], [ 167.924, -29.056 ], [ 167.912, -29.012 ], [ 167.984, -29.018 ] ] ] } }
-]
-}

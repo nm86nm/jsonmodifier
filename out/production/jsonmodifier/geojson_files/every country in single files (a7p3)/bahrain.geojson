@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Bahrain", "ISO_A3": "BHR" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 50.552, 26.194 ], [ 50.636, 26.134 ], [ 50.565, 25.79 ], [ 50.46, 25.985 ], [ 50.47, 26.123 ], [ 50.482, 26.243 ], [ 50.587, 26.242 ], [ 50.604, 26.198 ], [ 50.552, 26.194 ] ] ] } }
-]
-}

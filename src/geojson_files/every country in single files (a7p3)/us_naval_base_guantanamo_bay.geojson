@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "US Naval Base Guantanamo Bay", "ISO_A3": "-99" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -75.184, 19.934 ], [ -75.218, 19.924 ], [ -75.233, 19.9 ], [ -75.157, 19.939 ], [ -75.184, 19.934 ] ] ], [ [ [ -75.095, 19.972 ], [ -75.158, 19.919 ], [ -75.117, 19.967 ], [ -75.095, 19.972 ] ] ], [ [ { "type": "Feature", "properties": { "ADMIN": "US Naval Base Guantanamo Bay", "ISO_A3": "-99" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -75.184, 19.934 ], [ -75.218, 19.924 ], [ -75.233, 19.9 ], [ -75.157, 19.939 ], [ -75.184, 19.934 ] ] ], [ [ [ -75.095, 19.972 ], [ -75.158, 19.919 ], [ -75.117, 19.967 ], [ -75.095, 19.972 ] ] ] ] } }
-]
-}

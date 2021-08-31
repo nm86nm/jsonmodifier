@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Montserrat", "ISO_A3": "MSR" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -62.147, 16.744 ], [ -62.141, 16.696 ], [ -62.219, 16.776 ], [ -62.156, 16.76 ], [ -62.147, 16.744 ] ] ] } }
-]
-}

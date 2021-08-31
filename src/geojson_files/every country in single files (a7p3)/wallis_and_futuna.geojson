@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Wallis and Futuna", "ISO_A3": "WLF" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -178.047, -14.313 ], [ -178.175, -14.277 ], [ -178.047, -14.313 ] ] ], [ [ [ -176.147, -13.348 ], [ -176.183, -13.278 ], [ -176.126, -13.264 ], [ -176.142, -13.336 ], [ -176.147, -13.348 ] ] ], [ [ { "type": "Feature", "properties": { "ADMIN": "Wallis and Futuna", "ISO_A3": "WLF" }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -178.047, -14.313 ], [ -178.175, -14.277 ], [ -178.047, -14.313 ] ] ], [ [ [ -176.147, -13.348 ], [ -176.183, -13.278 ], [ -176.126, -13.264 ], [ -176.142, -13.336 ], [ -176.147, -13.348 ] ] ] ] } }
-]
-}

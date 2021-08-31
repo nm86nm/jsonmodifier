@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Guam", "ISO_A3": "GUM" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 144.886, 13.64 ], [ 144.907, 13.517 ], [ 144.718, 13.242 ], [ 144.644, 13.332 ], [ 144.647, 13.396 ], [ 144.641, 13.438 ], [ 144.811, 13.554 ], [ 144.886, 13.64 ] ] ] } }
-]
-}

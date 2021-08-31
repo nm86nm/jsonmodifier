@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Nauru", "ISO_A3": "NRU" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 166.939, -0.49 ], [ 166.913, -0.5 ], [ 166.939, -0.49 ] ] ] } }
-]
-}

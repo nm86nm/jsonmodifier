@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Barbados", "ISO_A3": "BRB" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -59.427, 13.16 ], [ -59.523, 13.056 ], [ -59.608, 13.085 ], [ -59.631, 13.338 ], [ -59.537, 13.231 ], [ -59.427, 13.16 ] ] ] } }
-]
-}

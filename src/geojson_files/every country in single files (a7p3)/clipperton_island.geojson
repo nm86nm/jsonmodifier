@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Clipperton Island", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -109.212, 10.303 ], [ -109.212, 10.303 ] ] ] } }
-]
-}

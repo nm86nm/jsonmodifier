@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Heard Island and McDonald Islands", "ISO_A3": "HMD" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 73.735, -53.112 ], [ 73.507, -53.193 ], [ 73.371, -53.065 ], [ 73.271, -53.022 ], [ 73.337, -52.986 ], [ 73.413, -52.993 ], [ 73.508, -53.015 ], [ 73.656, -53.068 ], [ 73.735, -53.112 ] ] ] } }
-]
-}

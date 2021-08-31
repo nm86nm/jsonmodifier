@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Siachen Glacier", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 76.976, 35.579 ], [ 77.141, 35.525 ], [ 77.413, 35.469 ], [ 77.747, 35.494 ], [ 76.777, 35.646 ], [ 76.915, 35.583 ], [ 76.976, 35.579 ] ] ] } }
-]
-}

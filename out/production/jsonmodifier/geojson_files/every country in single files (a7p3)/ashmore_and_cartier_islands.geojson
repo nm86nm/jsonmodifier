@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Ashmore and Cartier Islands", "ISO_A3": "-99" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 123.597, -12.428 ], [ 123.597, -12.428 ] ] ] } }
-]
-}

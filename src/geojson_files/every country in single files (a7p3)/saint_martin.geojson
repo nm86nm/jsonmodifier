@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Saint Martin", "ISO_A3": "MAF" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -63.018, 18.033 ], [ -63.134, 18.059 ], [ -63.079, 18.104 ], [ -63.011, 18.041 ], [ -63.018, 18.033 ] ] ] } }
-]
-}

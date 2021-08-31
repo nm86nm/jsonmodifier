@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Liechtenstein", "ISO_A3": "LIE" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 9.581, 47.057 ], [ 9.512, 47.108 ], [ 9.521, 47.263 ], [ 9.562, 47.191 ], [ 9.581, 47.057 ] ] ] } }
-]
-}

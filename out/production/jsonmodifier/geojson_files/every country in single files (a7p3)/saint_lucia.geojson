@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Saint Lucia", "ISO_A3": "LCA" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -60.887, 14.01 ], [ -60.91, 13.776 ], [ -60.955, 13.715 ], [ -61.071, 13.822 ], [ -61.076, 13.89 ], [ -60.997, 14.027 ], [ -60.933, 14.112 ], [ -60.887, 14.01 ] ] ] } }
-]
-}

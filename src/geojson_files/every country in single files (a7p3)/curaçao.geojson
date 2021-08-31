@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Curaçao", "ISO_A3": "CUW" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -68.781, 12.098 ], [ -68.841, 12.055 ], [ -69.044, 12.197 ], [ -69.16, 12.293 ], [ -69.156, 12.391 ], [ -69.041, 12.256 ], [ -68.804, 12.117 ], [ -68.781, 12.098 ] ] ] } }
-]
-}

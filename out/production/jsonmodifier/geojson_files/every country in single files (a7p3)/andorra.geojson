@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Andorra", "ISO_A3": "AND" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 1.707, 42.503 ], [ 1.654, 42.497 ], [ 1.528, 42.434 ], [ 1.425, 42.492 ], [ 1.426, 42.562 ], [ 1.467, 42.641 ], [ 1.713, 42.59 ], [ 1.711, 42.528 ], [ 1.707, 42.503 ] ] ] } }
-]
-}

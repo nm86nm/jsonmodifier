@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Aruba", "ISO_A3": "ABW" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -69.997, 12.578 ], [ -69.909, 12.418 ], [ -70.048, 12.531 ], [ -70.06, 12.614 ], [ -69.997, 12.578 ] ] ] } }
-]
-}

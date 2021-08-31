@@ -1,7 +1,0 @@
-{
-"type": "FeatureCollection",
-
-"features": [
-{ "type": "Feature", "properties": { "ADMIN": "Saint Barthelemy", "ISO_A3": "BLM" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -62.839, 17.882 ], [ -62.799, 17.904 ], [ -62.839, 17.882 ] ] ] } }
-]
-}
