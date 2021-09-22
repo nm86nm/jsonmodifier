@@ -1,0 +1,6 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Turks and Caicos Islands", "ISO_A3": "TCA" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -71.679, 21.299 ], [ -71.688, 21.3 ], [ -71.679, 21.299 ] ] ] } }
+]
+}

@@ -1,0 +1,6 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Vatican", "ISO_A3": "VAT" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 12.453, 41.903 ], [ 12.453, 41.904 ], [ 12.453, 41.903 ] ] ] } }
+]
+}
