@@ -324,26 +324,6 @@ public class JSONModifier {
         return fileWithCountry;
     }
 
-    public List<String> fileReader(String fileName) {
-        List<String> listStringFile = new ArrayList<>();
-
-        try {
-            FileReader fileReader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            String stringLine;
-            while ((stringLine = bufferedReader.readLine()) != null)
-                listStringFile.add(stringLine);
-
-            bufferedReader.close();
-            fileReader.close();
-        } catch (IOException e) {
-            System.out.println(e.getLocalizedMessage());
-        }
-
-        return listStringFile;
-    }
-
     public List<String> fileReader(File file) {
         List<String> listStringFile = new ArrayList<>();
 
@@ -355,6 +335,26 @@ public class JSONModifier {
             while ((stringLine = bufferedReader.readLine()) != null) {
                 listStringFile.add(stringLine);
             }
+
+            bufferedReader.close();
+            fileReader.close();
+        } catch (IOException e) {
+            System.out.println(e.getLocalizedMessage());
+        }
+
+        return listStringFile;
+    }
+
+    public List<String> fileReader(String fileName) {
+        List<String> listStringFile = new ArrayList<>();
+
+        try {
+            FileReader fileReader = new FileReader(fileName);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String stringLine;
+            while ((stringLine = bufferedReader.readLine()) != null)
+                listStringFile.add(stringLine);
 
             bufferedReader.close();
             fileReader.close();

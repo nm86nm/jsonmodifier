@@ -1,0 +1,6 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "properties": { "ADMIN": "Russia", "ISO_A3": "RUS" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 82.152, 75.109 ], [ 82.027, 75.129 ], [ 82.113, 75.159 ], [ 82.15, 75.121 ], [ 82.152, 75.109 ] ] ] } }
+]
+}
