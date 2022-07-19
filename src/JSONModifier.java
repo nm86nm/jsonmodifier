@@ -1,35 +1,38 @@
 import java.io.*;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.file.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
-import java.util.stream.Stream;
 
 
 public class JSONModifier {
     private static final int ABRIDGEMENT = 1;
     private static final int PLACES = 3;
-    private static final String COUNTRY_NAME = "Russia";
-    private static final String FILE_NAME = "russia.geojson";
-    private static final String PATH_TO_DIRECTORY = "src/geojson_files/utc (a1p3)/russia/";
-    private static final String PATH_TO_FILE = PATH_TO_DIRECTORY + FILE_NAME;
+    private static final String PATH_TO_DIRECTORY = "C:\\Users\\nm86n\\Documents\\Programming\\JSON\\GeoJSON\\Time Zones\\UTC+4.5\\Iran\\";
 
-    public static void main(String[] args) throws URISyntaxException {
+    public static void main(String[] args) throws URISyntaxException, IOException {
         JSONModifier jsonModifier = new JSONModifier();
+        List<String> fileReader = jsonModifier.fileReader(PATH_TO_DIRECTORY + "iran.geojson");
+        List<String> listCoordinates = jsonModifier.getListCoordinatesForCountryIndex(fileReader, 3);
+        int polygonsNumber = jsonModifier.polygonsNumber(listCoordinates);
+        List<String> searchPolygons = jsonModifier.searchPolygons(listCoordinates);
+        int indexOfTheBiggestPolygon = jsonModifier.indexOfTheBiggestPolygon(listCoordinates);
 
-        File file = new File("C:\\Users\\nm86n\\Documents\\Programming\\JSON\\GeoJSON\\Time Zones\\UTC+2\\Russia\\russia multipolygon pattern.geojson");
-        List<String> baseFile = jsonModifier.fileReader(file);;
-        jsonModifier.printListString(baseFile);
+        jsonModifier.printListString(searchPolygons);
 
-        // info
-        /*jsonModifier.printListString(listPolygons);
-        System.out.println("Polygons number: " + polygonsNumber);
-        System.out.println("Index of the biggest polygon: " + indexOfTheBiggestPolygon);*/
+        /*int polygonNumber = 1;
+        for (int i = 0; i < polygonsNumber; i++) {
+            List<String> geoJSONwithChosenPolygon = jsonModifier.geoJSONWithChosenPolygon(i, fileReader);
+            jsonModifier.fileWriter(
+                    PATH_TO_DIRECTORY + "iran polygon " + polygonNumber + ".geojson",
+                    geoJSONwithChosenPolygon
+            );
+            polygonNumber++;
+        }*/
 
         // first part
-        /*List<String> geoJSONwithChosenPolygon = jsonModifier.geoJSONWithChosenPolygon(indexOfTheBiggestPolygon, PATH_TO_FILE, COUNTRY_NAME);
-        jsonModifier.fileWriter("src//geojson_files//corrected_countries//" + COUNTRY_NAME.toLowerCase() + "//" + COUNTRY_NAME.toLowerCase()
-                + " main polygon 1.geojson", geoJSONwithChosenPolygon);*/
+        /*List<String> geoJSONwithChosenPolygon = jsonModifier.geoJSONWithChosenPolygon(indexOfTheBiggestPolygon, fileReader);
+        jsonModifier.fileWriter(PATH_TO_DIRECTORY + "china - the biggest polygon.geojson", geoJSONwithChosenPolygon);*/
 
         // second part
         /*List<String> geoJSONWithMainPolygon = jsonModifier.fileReader(
@@ -42,14 +45,15 @@ public class JSONModifier {
                                 jsonModifier.geoJSONformat(jsonModifier.correctedCoordinates(geoJSONWithMainPolygon)), COUNTRY_NAME))));*/
 
         // optional
-        /*List<String> fileReader = jsonModifier.fileReader(PATH_TO_FILE);
+        /*List<String> fileReader = jsonModifier.fileReader(PATH_TO_DIRECTORY + "china - the biggest polygon 2.geojson");
         String correctedCoordinates = jsonModifier.correctedCoordinates(fileReader);
         List<String> geoJSONformat = jsonModifier.geoJSONformat(correctedCoordinates);
-        List<String> listCoordinates = jsonModifier.getListCoordinatesForCountryName(geoJSONformat, COUNTRY_NAME);
-        List<String> abridgementOfTheCoordinates = jsonModifier.abridgementOfTheCoordinates(listCoordinates);
+        List<String> listCoordinates = jsonModifier.getListCoordinatesForCountryName(geoJSONformat, "china");
+        List<String> reversalListCoordinates = jsonModifier.reversalListCoordinates(listCoordinates);
+        List<String> abridgementOfTheCoordinates = jsonModifier.abridgementOfTheCoordinates(reversalListCoordinates);
         List<String> geoJSONwithoutCoordinates = jsonModifier.geoJSONwithoutCoordinates(geoJSONformat);
 
-        jsonModifier.fileWriter("src//geojson_files//utc (a1p3)//democratic_republic_of_the_congo_UTC+1 (corrected).geojson",
+        jsonModifier.fileWriter(PATH_TO_DIRECTORY + "china - the biggest polygon (reversal).geojson",
                 jsonModifier.createGeoJSONfile(geoJSONwithoutCoordinates, abridgementOfTheCoordinates));*/
     }
 
@@ -306,22 +310,44 @@ public class JSONModifier {
         return geoJSONfile;
     }
 
-    public List<String> createGeoJSONFileWithCoordinates(List<String> listCoordinates) {    // String countryName
-        List<String> fileWithCountry = fileReader("src\\geojson_files\\base.geojson");
-        //List<String> listCountries = fileReader("src\\geojson_files\\every country in single files (a3p3)\\" + countryName.toLowerCase() + ".geojson");
-        String countryData = "{ \"type\": \"Feature\", \"properties\": { \"ADMIN\": \"Canada\", \"ISO_A3\": \"CAN\" }, \"geometry\": { \"type\": \"Polygon\", \"coordinates\": [ [ ";
+    public List<String> createMultipolygonWithPolygons(List<String> baseFile, List<File> pathsToFilesWithPolygons) {
+        JSONModifier jsonModifier = new JSONModifier();
+        List<String> multipolygon = new ArrayList<>();
 
-        for (int i = 0; i < listCoordinates.size(); i++) {
-            if (i != listCoordinates.size() - 1)
-                countryData += listCoordinates.get(i) + ", ";
-            else
-                countryData += listCoordinates.get(i);
+        /*for(int i=0; i<=2; i++)
+            multipolygon.add(baseFile.get(i));*/
+
+        int polygonsCounter = 1;
+        for (String s1 : baseFile) {
+            if (!s1.contains("coordinates")) {
+                multipolygon.add(s1);
+            } else {
+                int startIndex = s1.indexOf("[") + 2;
+                String line = s1.substring(0, startIndex);
+
+                for (File pathToFile : pathsToFilesWithPolygons) {
+                    line += "[ [ ";
+                    List<String> listCoordinates = jsonModifier.getListCoordinatesForCountryIndex(jsonModifier.fileReader(pathToFile), 3);
+
+                    for (String s : listCoordinates) {
+                        if (s != listCoordinates.get(listCoordinates.size() - 1))
+                            line += s + ", ";
+                        else
+                            line += s + " ] ]";
+                    }
+
+                    if (pathToFile != pathsToFilesWithPolygons.get(pathsToFilesWithPolygons.size() - 1)) {
+                        line += ", ";
+                        polygonsCounter++;
+                    } else {
+                        line += " ] } }";
+                        multipolygon.add(line);
+                    }
+                }
+            }
         }
 
-        countryData += " ] ] } }";
-        fileWithCountry.add(3, countryData);
-
-        return fileWithCountry;
+        return multipolygon;
     }
 
     public List<String> fileReader(File file) {
@@ -492,6 +518,37 @@ public class JSONModifier {
         return geoJSONWithChosenPolygon;
     }
 
+    public List<String> geoJSONWithChosenPolygon(int indexOfThePolygon, List<String> listFile) {
+        List<String> geoJSONWithChosenPolygon = new ArrayList<>();
+        List<String> geoJSONwithoutCoordinates = geoJSONwithoutCoordinates(listFile);
+        List<String> listCoordinatesForAllPolygons = getListCoordinatesForCountryIndex(listFile, 3);
+        String stringCoordinatesForOnePolygon = "";
+        List<String> searchedPolygons = searchPolygons(listCoordinatesForAllPolygons);
+        String rangeCoordinates = searchedPolygons.get(indexOfThePolygon);
+        int firstIndex = Integer.parseInt(rangeCoordinates.substring(rangeCoordinates.indexOf("from") + 5, rangeCoordinates.indexOf("to") - 1));
+        int lastIndex = Integer.parseInt(rangeCoordinates.substring(rangeCoordinates.indexOf("to") + 3, rangeCoordinates.indexOf(", size")));
+
+        for (int i = firstIndex; i <= lastIndex; i++) {
+            if (i < lastIndex)
+                stringCoordinatesForOnePolygon += listCoordinatesForAllPolygons.get(i) + ", ";
+            else
+                stringCoordinatesForOnePolygon += listCoordinatesForAllPolygons.get(i);
+        }
+
+        for (int i = 0; i < geoJSONwithoutCoordinates.size(); i++) {
+            if (i != 3) {
+                geoJSONWithChosenPolygon.add(geoJSONwithoutCoordinates.get(i));
+            } else {
+                geoJSONWithChosenPolygon.add(
+                        geoJSONwithoutCoordinates.get(3).substring(0, geoJSONwithoutCoordinates.get(3).indexOf("MultiPolygon"))
+                                + geoJSONwithoutCoordinates.get(3).substring(geoJSONwithoutCoordinates.get(3).indexOf("MultiPolygon") + 5,
+                                geoJSONwithoutCoordinates.get(3).length() - 12) + stringCoordinatesForOnePolygon + " ] ] } }");
+            }
+        }
+
+        return geoJSONWithChosenPolygon;
+    }
+
     public List<String> getListCountriesNames(List<String> listCountries) {
         List<String> listCountriesNames = new ArrayList<>();
 
@@ -534,6 +591,23 @@ public class JSONModifier {
         }
 
         return countryIndex;
+    }
+
+    public List<String> getGeoJSONBaseFile() {
+        /*{
+            "type": "FeatureCollection",
+                "features": [
+            ]
+        }*/
+
+        List<String> geoJSONbaseFile = new ArrayList<>();
+        geoJSONbaseFile.add("{");
+        geoJSONbaseFile.add("\"type\": \"FeatureCollection\",");
+        geoJSONbaseFile.add("\"features\": [");
+        geoJSONbaseFile.add("]");
+        geoJSONbaseFile.add("}");
+
+        return geoJSONbaseFile;
     }
 
     public List<String> getListCoordinatesForCountryIndex(List<String> listCountries, int countryIndex) {
@@ -680,6 +754,28 @@ public class JSONModifier {
         return Integer.parseInt(indexesForPolygon.get(indexesForPolygon.size() - 1).substring(beginIndex, endIndex));
     }
 
+    public List<String> polygonsInFile(List<File> pathsToFilesWithPolygons) {
+        JSONModifier jsonModifier = new JSONModifier();
+        List<String> polygonsInFile = jsonModifier.getGeoJSONBaseFile();
+
+        int index = 3;
+        for (File f : pathsToFilesWithPolygons) {
+            if (f != pathsToFilesWithPolygons.get(pathsToFilesWithPolygons.size() - 1)) {
+                polygonsInFile.add(index,
+                        jsonModifier.fileReader(f).get(3) + ","
+                );
+            } else {
+                polygonsInFile.add(index,
+                        jsonModifier.fileReader(f).get(3)
+                );
+            }
+
+            index++;
+        }
+
+        return polygonsInFile;
+    }
+
     public void printListString(List<String> listStrings) {
         System.out.print("\n");
         int counter = 1;
@@ -689,8 +785,22 @@ public class JSONModifier {
         }
     }
 
-    public List<String> replacePolygon(List<String> geoJSONwithAllPolygons, int indexPolygonToReplace, List<String> coordinatesForOnePolygon) {
-        List<String> listCoordinatesForAllPolygons = getListCoordinatesForCountryName(geoJSONwithAllPolygons, COUNTRY_NAME);
+    public void printListString(List<String> listStrings, boolean lineNumbers) {
+        System.out.print("\n");
+
+        if (lineNumbers == true) {
+            int counter = 1;
+            for (String stringCoordinates : listStrings) {
+                System.out.println(counter + ". " + stringCoordinates);
+                counter++;
+            }
+        } else
+            for (String stringCoordinates : listStrings)
+                System.out.println(stringCoordinates);
+    }
+
+    public List<String> replacePolygon(List<String> geoJSONwithAllPolygons, int indexPolygonToReplace, List<String> coordinatesForOnePolygon, String countryName) {
+        List<String> listCoordinatesForAllPolygons = getListCoordinatesForCountryName(geoJSONwithAllPolygons, countryName);
         List<String> indexesForPolygons = indexesForPolygons(listCoordinatesForAllPolygons);
         List<String> correctedCountry = new ArrayList<>();
         String rangeForChosenPolygon = indexesForPolygons(listCoordinatesForAllPolygons).get(indexPolygonToReplace);
@@ -756,6 +866,13 @@ public class JSONModifier {
         //fileWriter("src//geojson_files//chile//chile corrected.geojson", correctedCountry);
 
         return correctedCountry;
+    }
+
+    public List<String> reversalListCoordinates(List<String> listCoordinates) {
+        List<String> reversalListCoordinates = listCoordinates;
+        Collections.reverse(reversalListCoordinates);
+
+        return reversalListCoordinates;
     }
 
     public String roundCoordinates(String coordinates) {
